@@ -1,0 +1,57 @@
+<div class="main">
+  <img
+    src="https://4kwallpapers.com/images/wallpapers/porsche-911-5k-8k-3840x2160-12576.jpeg"
+    alt=""
+  />
+  <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+    <h1>Enter Your Information</h1>
+    <div class="form-group">
+      <label for="">Enter your name</label>
+      <input
+        required
+        ngModel
+        name="name"
+        type="text"
+        placeholder="Enter Here"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="">Enter your Email</label>
+      <input
+        required
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        ngModel
+        name="email"
+        type="text"
+        placeholder="Enter Here"
+        class="form-control"
+      />
+    </div>
+
+    <div>
+      <label for="">Enter your password</label>
+      <input
+        required
+        ngModel
+        name="password"
+        type="password"
+        placeholder="Enter Here"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        (click)="setData(form.value.name)"
+        [disabled]="!form.valid"
+        type="submit"
+        class="btn btn-dark col-md-12 d-block"
+        routerLink="../cards"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

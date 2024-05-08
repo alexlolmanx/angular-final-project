@@ -1,0 +1,17 @@
+<h1>Hi {{ sharedData }}!</h1>
+<i routerLink="../favorites" class="fa-solid fa-heart damateba"></i>
+
+<div *ngFor="let car of carList">
+  <div *ngIf="car.brand != null">
+    <img src="{{ car.imageUrl1 }}" alt="" />
+    <p>{{ car.brand }} {{ car.model }}</p>
+    <p>გადაცემთა კოლოფი: {{ car.transmission }}</p>
+    <p>ქალაქი: {{ car.city }}</p>
+    <p>საწვავის მოცულობა: {{ car.fuelCapacity }}</p>
+    <p>ფასი: {{ car.price }}$</p>
+    <i
+      (click)="sharedDataService.addFavorite(car)"
+      class="fa-solid fa-heart damateba"
+    ></i>
+  </div>
+</div>
